@@ -16,9 +16,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LINE_LEN 4096
+#include <strutils.h>
 
-char *trim_line(char *);
+#define MAX_LINE_LEN 4096
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
     while (fgets(line, MAX_LINE_LEN, stdin) != NULL)
     {
         line[strlen(line) - 1] = 0;
-        printf("%s\n", trim_line(line));
+        printf("%s\n", str_trim(line, MAX_LINE_LEN));
     }
 
     free(line);
@@ -35,19 +35,3 @@ int main()
     return 0;
 }
 
-char *trim_line(char *line)
-{
-    int len;
-    while (line[0] == ' ' && strlen(line) > 0)
-        line++;
-
-    len = strlen(line) - 1;
-
-    while (line[len] == ' ' && len > 0)
-    {
-        line[len] = 0;
-        len--;
-    }
-
-    return line;
-}

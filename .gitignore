@@ -2,3 +2,6 @@ trim/trim
 *.d
 *.o
 **/.depend
+libtools/libtools*
+libtools/strutils.pico
+libtools/strutils.po
