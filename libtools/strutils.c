@@ -56,7 +56,6 @@ int   str_index(char *src, char search, size_t src_len)
     return -1;
 }
 
-
 char *str_trim(char *line, size_t max_len)
 {
     int len;
