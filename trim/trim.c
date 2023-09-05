@@ -14,7 +14,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #include <strutils.h>
 
@@ -23,10 +22,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
 int main()
 {
     char *line = malloc(MAX_LINE_LEN);
+    if (line == NULL)
+    {
+        fprintf(stderr, "Unable to allocate memory\n");
+    }
     
     while (fgets(line, MAX_LINE_LEN, stdin) != NULL)
     {
-        line[strlen(line) - 1] = 0;
+        line[str_len(line, MAX_LINE_LEN) - 1] = 0;
         printf("%s\n", str_trim(line, MAX_LINE_LEN));
     }
 
