@@ -2,6 +2,7 @@ trim/trim
 *.d
 *.o
 **/.depend
+**/*.pico
+**/*.po
 libtools/libtools*
-libtools/strutils.pico
-libtools/strutils.po
+

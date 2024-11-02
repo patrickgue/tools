@@ -1,9 +1,9 @@
-PROG=trim
-SRCS=trim.c
+PROG=base64
+SRCS=base64prg.c
 MAN=
 PREFIX?=/usr/local
 BINDIR=${PREFIX}/bin
 LDADD=-L../libtools/ -ltools
-CFLAGS := -I../libtools
+CFLAGS := -I../libtools -g
 
 .include <bsd.prog.mk>
