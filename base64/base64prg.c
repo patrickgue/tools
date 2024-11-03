@@ -58,10 +58,6 @@ int main(int argc, char **argv)
             {
                 b64_buff[i++] = c;
             }
-            else
-            {
-                printf("%02x\n", c);
-            }
 
             if (i == 8 || c == EOF)
             {

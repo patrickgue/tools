@@ -13,6 +13,8 @@ base64/base64: ${LIBS}
 ${LIBS}:
 	${MAKE} -C libtools
 
+install: $(PROGS)
+	cp $(PROGS) /usr/local/bin/
 
 clean:
 	${MAKE} -C base64 clean
